@@ -53,13 +53,13 @@ def boss_fight_1(name):
             print_pause("You've beaten the game.")
             you_win()
             break
-        if fight == "2":
+        elif fight == "2":
             print_pause(f"{name} starts running, but as it turns out Goliath is an expert sprinter and catches up to you quiet easilly.")
             print_pause(f"Goliath cathes {name} and murders him.")
             print_pause("Game over.")
             you_lose()
             break
-        if fight == "3":
+        elif fight == "3":
             print_pause(f"{name} begs Goliath for mercy and Goliath pulls out a dice and makes {name} a silly offer.")
             print_pause(f"He says that if {name} rolls a higher number than he does, he is free to leave...")
             print_pause("But if he doesn't, Goliath is going to kill him.")
@@ -81,9 +81,11 @@ def boss_fight_1(name):
                     break
                 else:
                     print_pause("It's a tie. They roll again.")
-            break           
-    play_again()
-            # All paths 
+        else:
+            print_pause("Please enter 1, 2 or 3")
+            boss_fight_1(name)
+        break      
+            # All paths
 def paths(name):
     print_pause(f"While exploring the wasteland, {name} comes across a path that leads into three directions:")
     print_pause("1. A dark and dangerous looking road, with a bunch of \"No entrance\" signs.\n"
@@ -94,6 +96,7 @@ def paths(name):
     if choice == "1":
         first_path(name)
         boss_fight_1(name)
+        play_again()
     elif choice == "2":
         second_path(name)
         you_lose()
@@ -103,6 +106,7 @@ def paths(name):
         # boss_fight_2()
     else:
         print_pause("Please enter 1, 2 or 3.")
+        paths(name)
             # The type of turtle:
 def tur(t_name, color):
     t_name.color(color)
