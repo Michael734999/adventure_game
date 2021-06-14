@@ -1,4 +1,5 @@
-character = ["Knight", "Young man", "magician", "Superhero", "Marine", "Pilot", "Millionaire"]
+character = ["Knight", "Young man", "magician", "Superhero",
+             "Marine", "Pilot", "Millionaire"]
 
 villains = ["dragon", "supervillan", "Witch"]
 
